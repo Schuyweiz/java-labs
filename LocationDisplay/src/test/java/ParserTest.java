@@ -51,6 +51,8 @@ class ParserTest {
                 System.out.println(i);
             }
 
+            Assertions.assertTrue(assertion);
+
         }
 
     }
