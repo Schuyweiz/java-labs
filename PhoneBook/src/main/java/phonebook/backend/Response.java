@@ -12,8 +12,8 @@ public class Response {
         this.body = body;
     }
 
-    private boolean accepted;
-    private String body;
+    private final boolean accepted;
+    private final String body;
 
 
     public boolean isAccepted() {

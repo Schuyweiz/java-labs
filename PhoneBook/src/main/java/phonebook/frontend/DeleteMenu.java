@@ -21,7 +21,7 @@ public class DeleteMenu extends Menu {
     private void displayDeleteOptions(){
 
             LOGGER.debug("Displaying delete options.");
-            System.out.println(Messages.DELETE_OPTIONS);
+            System.out.println(OPTIONS);
             List<Contact> contacts = deleteOptions.get();
             for(int i=0;i<contacts.size();i++){
                 System.out.printf("[%d] %s\n",
@@ -45,7 +45,7 @@ public class DeleteMenu extends Menu {
      */
     private int getDeleteId(){
         LOGGER.debug("Retrieving id of a contact to delete.");
-        System.out.println("Enter the index of the contact you would like to delete.");
+        System.out.println(DEMAND_ID);
         String choice;
         do{
             choice = in.nextLine();
@@ -109,5 +109,7 @@ public class DeleteMenu extends Menu {
 
     private static final String SUCCESS_MESSAGE ="Deleted successfully.";
     private static final String FAILURE_MESSAGE = "Failed to delete a contact.";
+    private static final String OPTIONS = "Which of the following contacts would you like to delete?";
+    private static final String DEMAND_ID = "Enter the index of the contact you would like to delete.";
 
 }

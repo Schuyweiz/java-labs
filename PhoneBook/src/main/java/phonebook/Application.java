@@ -98,9 +98,15 @@ public class Application {
      * Displaying all contacts.
      */
     public void displayActionChoice(){
-        System.out.println(Messages.MAIN_MENU);
+        System.out.println(PROGRAM_MAIN_MENU);
     }
 
     private final Scanner in;
     private final Database database;
+    private static final String PROGRAM_MAIN_MENU = "Would you like to:\n" +
+            "[0] Exit the program.\n" +
+            "[1] Find a contact.\n" +
+            "[2] Add a new contact.\n" +
+            "[3] Delete an existing contact.\n" +
+            "[4] Display all contacts.";
 }

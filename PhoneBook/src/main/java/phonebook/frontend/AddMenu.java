@@ -76,9 +76,6 @@ public class AddMenu extends Menu {
     private static final String GET_EXTRA_NUMBERS_MESSAGE =
             "Enter another number of a new contact if any " +
                     "or enter \"no\" to finish creating a new contact";
-    private static final String STOP_EXTRA_MESSAGE =
-            "If you are done entering extra phone numbers, type in \"no\" and press enter.\n" +
-                    "Type in a new number and press enter otherwise";
     // endregion
 
     // region Getters

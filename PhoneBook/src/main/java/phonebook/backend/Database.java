@@ -120,7 +120,7 @@ public class Database {
         } catch (IOException e) {
             System.out.println("Something went wrong with your contacts.\n" +
                     "Your contact book will now be erased and reinitialized empty.");
-            LOGGER.error("An error occured when loading data.\n"+e.getMessage());
+            LOGGER.error("An error occurred when loading data.\n"+e.getMessage());
             data = new ArrayList<>();
             saveData();
         }
@@ -131,10 +131,15 @@ public class Database {
      */
     private void saveData(){
         LOGGER.debug("Saving data.");
+        File directory = new File("target");
+
+        if(!directory.exists()){
+            directory.mkdir();
+        }
         try{
             objectMapper.writeValue(new File(SAVE_FILE_NAME),data);
         } catch (IOException e) {
-            System.out.println("An error occured when transforming data into a file.");
+            System.out.println("An error occurred when transforming data into a file.");
             LOGGER.error("An error occurred when saving data." + e.getMessage());
         }
     }

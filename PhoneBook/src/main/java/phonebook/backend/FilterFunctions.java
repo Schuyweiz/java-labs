@@ -11,21 +11,13 @@ public class FilterFunctions {
     public FilterFunctions(){
     }
 
-    public static void main(String[] args){
-        FilterFunctions q = new FilterFunctions();
-
-
-    }
-
 
     public static List<Contact> searchBySurname(List<Contact> contacts, String pattern){
         Stream<Contact> contactStream = contacts.stream();
-        List<Contact> filteredContacts =
-                contactStream
-                .filter(contact -> contact.containsSurname(pattern))
-                .sorted()
-                .collect(Collectors.toList());
-        return filteredContacts;
+        return contactStream
+        .filter(contact -> contact.containsSurname(pattern))
+        .sorted()
+        .collect(Collectors.toList());
     }
 
     public static List<Contact> searchByNumber(List<Contact> contacts, String pattern){

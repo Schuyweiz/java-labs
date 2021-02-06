@@ -11,7 +11,6 @@ public class Contact implements Comparable<Contact>{
     public boolean containsSurname(String pattern){
         return this.surname.toLowerCase().contains(pattern.toLowerCase());
     }
-
     public boolean containsNumber(String pattern){
         for(String number:this.numbers){
             if(number.contains(pattern)){
@@ -20,7 +19,6 @@ public class Contact implements Comparable<Contact>{
         }
         return false;
     }
-
     public boolean containsBirth(String pattern){
         return this.birth.contains(pattern);
     }
@@ -82,6 +80,12 @@ public class Contact implements Comparable<Contact>{
         return this.surname.compareTo(o.surname);
     }
 
+    /**
+     * Compares 2 objects of the type Contact. If all of the fields are equal,
+     * then the objects are equal.
+     * @param contact comparing to.
+     * @return true if the contacts are equal, false otherwise.
+     */
     @Override
     public boolean equals(Object contact){
         if(contact instanceof Contact){

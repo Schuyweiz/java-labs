@@ -8,7 +8,7 @@ import java.util.List;
 public class RequestPut extends Request {
     private final Logger LOGGER = Logger.getLogger(this.getClass());
 
-    private Contact newContact;
+    private final Contact newContact;
 
     public RequestPut(Contact newContact){
         LOGGER.debug("RequestPut object created.");

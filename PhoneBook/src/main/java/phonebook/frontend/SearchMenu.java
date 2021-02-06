@@ -75,7 +75,7 @@ public class SearchMenu extends Menu {
     }
     private void initializeQueries(){
 
-        LOGGER.debug("Queries intialized.");
+        LOGGER.debug("Queries initialized.");
         filters = new Filtering[]{
                 new Filtering() {
                     @Override
@@ -123,8 +123,8 @@ public SearchMenu(){
         return Integer.parseInt(input);
     }
 
-    public void initializeSearch(){
-        System.out.println(Messages.SEARCH_MENU);
+    private void initializeSearch(){
+        System.out.println(MENU);
     }
 
 
@@ -133,7 +133,7 @@ public SearchMenu(){
      * e.g. in this case its a letters only name.
      * @return pattern for the name.
      */
-    public String getNameInput(){
+    private String getNameInput(){
         System.out.println("Enter the name patter to look for:");
         String input = in.nextLine();
         while(!input.matches("\\p{L}+")){
@@ -148,7 +148,7 @@ public SearchMenu(){
      * e.g. in this case its a digits only input.
      * @return pattern for the phone number.
      */
-    public String getNumberInput(){
+    private String getNumberInput(){
         System.out.println("Enter the number pattern to look for: ");
         String input = in.nextLine();
         while(!input.matches("\\d+")){
@@ -163,7 +163,7 @@ public SearchMenu(){
      * e.g. in this case its a digits only input.
      * @return pattern for the phone number.
      */
-    public String getBirthInput(){
+    private String getBirthInput(){
         String input = in.nextLine();
         while(!birthChecker(input)){
             System.out.println(Messages.PATTERN_INPUT_WARNING);
@@ -178,6 +178,10 @@ public SearchMenu(){
 
     private PatternInput[] patterns;
     private Filtering[] filters;
+    private static final String MENU = "Search by:\n" +
+            "[1] Name.\n" +
+            "[2] Phone number.\n" +
+            "[3] Birth date.";
 
     interface PatternInput {
         String getPattern();

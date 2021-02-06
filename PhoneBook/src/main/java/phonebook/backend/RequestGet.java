@@ -34,8 +34,4 @@ public class RequestGet extends Request{
         List<Contact> filteredData = this.filter.apply(contacts,pattern.get());
         return filteredData;
     }
-
-    public List<Contact> getAll(List<Contact> contacts){
-        return contacts;
-    }
 }
